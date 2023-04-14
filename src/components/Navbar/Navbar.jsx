@@ -1,26 +1,24 @@
 import React from "react";
 import s from './Navbar.module.css';
+import Friend from './Friends/Friend'
+import NavigationItem from "./NavigationItem/NavigationItem";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    let friendsElements = props.friends.map(
+        friend => <Friend name={friend.name} key={friend.id} image={friend.image} />
+    )
+
+    let navItemsElements = props.nav_items.map(
+        nav_item => <NavigationItem name={nav_item.name} key={nav_item.id} url={nav_item.url} />
+    )
+
     return (
-        <nav className={s.nav}>
-            <div className={`${s.item} ${s.active}`}>
-                <a href="/profile">Profile</a>
-            </div>
-            <div className={s.item}>
-                <a href="/dialogs">Messages</a>
-            </div>
-            <div className={s.item}>
-                <a>News</a>
-            </div>
-            <div className={s.item}>
-                <a>Music</a>
-            </div>
-            <div className={s.item}>
-                <a>Settings</a>
-            </div>
-        </nav>
-    );
+        <div>
+            {navItemsElements}
+            {friendsElements}
+        </div>
+    )
 };
 
 export default Navbar;

@@ -1,17 +1,20 @@
 import React from "react";
-import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from './ProfileInfo/ProfileInfo'
 import s from './Profile.module.css';
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
-    return (<div>
+    return (
         <div>
-            <img src='http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRODAepevJESvKmoYWQ8YAJJQO0j_a_ZgVaTFAobP3lXgETKX-kTOowNQH9_zxyUGC-aLS53LuzzNt0qys8gO4'></img>
+            <ProfileInfo profile={props.profile}
+                status={props.status}
+                updateStatus={props.updateStatus}
+                isOwner={props.isOwner}
+                savePhoto={props.savePhoto}
+                saveProfile={props.saveProfile} />
+            <MyPostsContainer />
         </div>
-        <div>
-            ava + description
-        </div>
-        <MyPosts />
-    </div>);
+    );
 };
 
 export default Profile;
