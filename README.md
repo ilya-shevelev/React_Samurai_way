@@ -1,3 +1,5 @@
+# Educational project on React/Redux on cource "[React JS - путь самурая 1.0](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)".
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
